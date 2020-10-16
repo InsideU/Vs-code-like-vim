@@ -20,6 +20,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
     Plug 'Xuyuanp/nerdtree-git-plugin'
     Plug 'airblade/vim-gitgutter'
+    Plug 'tpope/vim-fugitive'
+    Plug 'tpope/vim-rhubarb'
     "Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
     Plug 'ryanoasis/vim-devicons'
     Plug 'ctrlpvim/ctrlp.vim'
@@ -27,7 +29,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
     Plug 'morhetz/gruvbox'
     Plug 'HerringtonDarkholme/yats.vim'
-
+    Plug 'vim-airline/vim-airline'
+    Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
 inoremap jk <ESC>
@@ -241,3 +244,30 @@ nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
+highlight GitGutterAdd    guifg=#009900 ctermfg=2
+highlight GitGutterChange guifg=#bbbb00 ctermfg=3
+highlight GitGutterDelete guifg=#ff2222 ctermfg=1
+
+let g:gitgutter_enabled =1
+
+" enable tabline
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ''
+let g:airline#extensions#tabline#left_alt_sep = ''
+let g:airline#extensions#tabline#right_sep = ''
+let g:airline#extensions#tabline#right_alt_sep = ''
+
+" enable powerline fonts
+let g:airline_powerline_fonts = 1
+let g:airline_left_sep = ''
+let g:airline_right_sep = ''
+
+" Switch to your current theme
+let g:airline_theme = 'onedark'
+
+" Always show tabs
+set showtabline=2
+
+:map <F7> :w !xclip<CR><CR>
+:vmap <F7> "*y
+:map <S-F7> :r!xclip -o<CR>
