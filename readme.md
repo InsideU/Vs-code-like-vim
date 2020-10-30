@@ -1,4 +1,6 @@
-## For those who say vscode is better than vim . ( You dont know  vim .  )
+## For those who say vscode is better than vim . ( You dont know  vim  )
+
+This is the nvim config file 
 
 
 ### This includes the Autocompletion and suggestion mode of vs code
